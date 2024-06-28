@@ -30,7 +30,7 @@ export const BaseLayout = () => {
 	const [showFavorite, setShowFavorite] = useState(false);
 	const [searchValue, setSearchValue] = useState('');
 	const [nameValue, setNameValue] = useState('');
-	const [sortIdOrder, setSortIdOrder] = useState('asc');
+	const [sortIdOrder, setSortIdOrder] = useState('desc');
 	const [sortTitleOrder, setSortTitleOrder] = useState('default');
 	const [sortNameOrder, setSortNameOrder] = useState('default');
 	const [sortFavOrder, setSortFavOrder] = useState('default');
