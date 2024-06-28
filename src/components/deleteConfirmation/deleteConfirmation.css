@@ -1,0 +1,48 @@
+.deleteConfirmationDialog {
+	border: 2px solid white;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+	background-color: rgb(175, 174, 174);
+	width: 300px;
+	height: 135px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	padding: 10px;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	color: white;
+}
+
+.confirmationButtons {
+	display: flex;
+	gap: 30px;
+}
+
+.confirmationConfirm {
+	background-color: green;
+	color: white;
+	height: 30px;
+	width: 80px;
+	cursor: pointer;
+}
+
+.confirmationConfirm:hover {
+	transform: scale(1.05);
+}
+
+.confirmationCancel {
+	background-color: red;
+	color: white;
+	height: 30px;
+	width: 80px;
+	cursor: pointer;
+}
+
+.confirmationCancel:hover {
+	transform: scale(1.05);
+}

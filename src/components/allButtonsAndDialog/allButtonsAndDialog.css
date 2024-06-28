@@ -1,0 +1,25 @@
+.allButtonsAndDialog {
+	display: flex;
+	gap: 10px;
+}
+
+.allDeleteButton {
+	cursor: pointer;
+	background-color: lightgray;
+	font-weight: 900;
+}
+
+.allDeleteButton:hover {
+	transform: scale(1.05);
+	cursor: pointer;
+}
+
+.allFavoriteButton {
+	cursor: pointer;
+	background-color: lightgray;
+	font-weight: 900;
+}
+
+.allFavoriteButton:hover {
+	transform: scale(1.05);
+}

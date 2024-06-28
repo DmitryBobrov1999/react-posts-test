@@ -1,0 +1,18 @@
+.comments {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.comment {
+	font-weight: 900;
+}
+
+.commentInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	border: 1px solid #0714ce;
+	padding: 2px;
+}

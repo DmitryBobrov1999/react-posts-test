@@ -1,0 +1,69 @@
+.filterByBlock {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.filterBySpan {
+	color: white;
+	font-weight: 900;
+}
+
+.filterSelect {
+	font-weight: 900;
+	width: 120px;
+}
+
+.filterFavButton {
+	width: 120px;
+	font-weight: 900;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	background-color: lightgray;
+}
+
+.filterFavButton:hover {
+	transform: scale(1.05);
+}
+
+.filterFavButton.active {
+	background-color: chartreuse;
+}
+
+.filterInput {
+	font-weight: 900;
+	font-size: 13px;
+	width: 120px;
+
+}
+
+@media (max-width: 620px) {
+	.filterByBlock {
+		flex-direction: column;
+		gap: 10px;
+		width: 158px;
+	}
+	.filterBySpan {
+		font-size: 18px;
+	}
+	.filterSelect {
+		font-size: 16px;
+		width: 100%;
+	}
+	.filterInput {
+		font-size: 16px;
+		width: 100%;
+		padding: 0;
+		border: none;
+	}
+	.filterInput::placeholder {
+		padding: 4px;
+	}
+	.filterFavButton {
+		width: 100%;
+		font-size: 16px;
+	}
+}

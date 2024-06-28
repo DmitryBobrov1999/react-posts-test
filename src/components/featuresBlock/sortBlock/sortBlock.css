@@ -1,0 +1,58 @@
+.sortByBlock {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.SortBySpan {
+	color: white;
+	font-weight: 900;
+}
+
+.sortByIdSelect {
+	font-weight: 900;
+	width: 120px;
+}
+
+.sortByTitleSelect {
+	font-weight: 900;
+	width: 120px;
+}
+
+.sortByNameSelect {
+	font-weight: 900;
+	width: 120px;
+}
+
+.sortByFavSelect {
+	font-weight: 900;
+	width: 120px;
+}
+
+@media (max-width: 620px) {
+	.sortByBlock {
+		flex-direction: column;
+		gap: 10px;
+		width: 158px;
+	}
+
+	.sortByIdSelect {
+		font-size: 16px;
+		width: 100%;
+	}
+	.sortByTitleSelect {
+		font-size: 16px;
+		width: 100%;
+	}
+	.sortByNameSelect {
+		font-size: 16px;
+		width: 100%;
+	}
+	.sortByFavSelect {
+		font-size: 15px;
+		width: 100%;
+	}
+	.SortBySpan {
+		font-size: 18px;
+	}
+}

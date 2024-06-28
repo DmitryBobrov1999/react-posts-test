@@ -1,0 +1,116 @@
+.createPostDialog {
+	border: 4px solid black;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+	background-color: rgb(175, 174, 174);
+	width: 560px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	padding: 10px;
+	font-size: 18px;
+	color: white;
+	box-sizing: border-box;
+}
+
+.createConfirmationButtons {
+	display: flex;
+	gap: 30px;
+}
+
+.createConfirmButton {
+	background-color: green;
+	color: white;
+	height: 30px;
+	width: 80px;
+	cursor: pointer;
+}
+
+.createConfirmButton:hover {
+	transform: scale(1.05);
+}
+
+.createCancelButton {
+	background-color: red;
+	color: white;
+	height: 30px;
+	width: 80px;
+	cursor: pointer;
+}
+
+.createCancelButton:hover {
+	transform: scale(1.05);
+}
+
+.createInputCreateTitle {
+	font-weight: 900;
+	font-size: 13px;
+}
+
+.createPostInfo {
+	display: flex;
+	gap: 20px;
+	margin-bottom: 15px;
+}
+
+.createPostInfoNames {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.createLabel {
+	height: 20px;
+}
+
+.createInputName {
+	font-weight: 900;
+	font-size: 13px;
+}
+.createAreaText {
+	height: 120px;
+	font-weight: 900;
+	resize: none;
+	white-space: wrap;
+	font-size: 13px;
+}
+
+.createPostInfoInputs {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+}
+
+@media (max-width: 620px) {
+	.createPostDialog {
+		width: 380px;
+		padding: 14px;
+		border: 3px solid black;
+	}
+	.createPostInfo {
+		gap: 10px;
+		margin-bottom: 10px;
+	}
+	
+	.createInputCreateTitle {
+		font-size: 16px;
+	}
+	.createInputName {
+		font-size: 16px;
+	}
+	.createAreaText {
+		font-size: 16px;
+		height: 100px;
+	}
+
+	.createConfirmationButtons {
+		justify-content: center;
+	}
+	.createPostButton {
+		width: 158px;
+	}
+}

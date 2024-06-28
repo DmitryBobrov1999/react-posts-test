@@ -1,0 +1,59 @@
+.postInfo {
+	display: flex;
+	gap: 10px;
+	width: 100%;
+}
+
+.postInfoNames {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.label {
+	font-size: 13px;
+	font-weight: 900;
+}
+
+.postInfoInputs {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+}
+
+.inputTitle {
+	font-weight: 900;
+	font-size: 13px;
+}
+
+.inputTitle:disabled {
+	background-color: transparent;
+	color: inherit;
+	border: none;
+}
+
+.inputName {
+	font-weight: 900;
+	font-size: 13px;
+}
+
+.inputName:disabled {
+	background-color: transparent;
+	color: inherit;
+	border: none;
+}
+
+.areaText {
+	height: 120px;
+	font-weight: 900;
+	resize: none;
+	white-space: wrap;
+	font-size: 13px;
+}
+
+.areaText:disabled {
+	background-color: transparent;
+	color: inherit;
+	border: none;
+}
