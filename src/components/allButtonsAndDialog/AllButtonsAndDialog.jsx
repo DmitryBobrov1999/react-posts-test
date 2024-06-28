@@ -48,7 +48,7 @@ export const AllButtonsAndDialog = ({ filteredPostsByName, setIsFavorite }) => {
 	return (
 		<div className='allButtonsAndDialog'>
 			<button onClick={deleteAllPosts} className='allDeleteButton'>
-				Удалить все
+				Delete all
 			</button>
 			{isDeleteAllConfirmationOpen && (
 				<AllConfirmation
@@ -58,7 +58,7 @@ export const AllButtonsAndDialog = ({ filteredPostsByName, setIsFavorite }) => {
 				/>
 			)}
 			<button onClick={addAllFavorites} className='allFavoriteButton'>
-				Все в избранное
+				All to favorites
 			</button>
 			{isAddAllConfirmationOpen && (
 				<AllConfirmation

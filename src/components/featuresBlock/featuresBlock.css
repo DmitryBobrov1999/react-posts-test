@@ -18,7 +18,7 @@
 	transform: scale(1.05);
 }
 
-@media (max-width: 620px) {
+@media (max-width: 768px) {
 	.featuresBlock {
 		width: 100%;
 		display: flex;

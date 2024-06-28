@@ -29,11 +29,10 @@
 	width: 120px;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 768px) {
 	.sortByBlock {
-		flex-direction: column;
-		gap: 10px;
-		width: 158px;
+		gap: 8px;
+		width: 98%;
 	}
 
 	.sortByIdSelect {
@@ -54,5 +53,33 @@
 	}
 	.SortBySpan {
 		font-size: 18px;
+	}
+}
+
+@media (max-width: 425px) {
+	.sortByBlock {
+		gap: 8px;
+		width: 158px;
+		flex-direction: column;
+	}
+	.sortByIdSelect option {
+		width: 100%;
+		font-size: 16px;
+		font-weight: 700;
+	}
+	.sortByTitleSelect option {
+		width: 100%;
+		font-size: 16px;
+		font-weight: 700;
+	}
+	.sortByNameSelect option {
+		width: 100%;
+		font-size: 16px;
+		font-weight: 700;
+	}
+	.sortByFavSelect option {
+		width: 100%;
+		font-size: 16px;
+		font-weight: 700;
 	}
 }

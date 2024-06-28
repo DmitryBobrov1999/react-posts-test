@@ -16,7 +16,7 @@ export const FilterBlock = () => {
 		<div className='filterByBlock'>
 			<span className='filterBySpan'>Filter by:</span>
 			<select className='filterSelect' onChange={handleUserChange}>
-				<option value=''>All Names</option>
+				<option className="filterOption" value=''>All Names</option>
 				{users.map(user => (
 					<option key={user.id} value={user.name}>
 						{user.name}

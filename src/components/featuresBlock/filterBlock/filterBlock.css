@@ -37,14 +37,12 @@
 	font-weight: 900;
 	font-size: 13px;
 	width: 120px;
-
 }
 
-@media (max-width: 620px) {
+@media (max-width: 768px) {
 	.filterByBlock {
-		flex-direction: column;
-		gap: 10px;
-		width: 158px;
+		gap: 8px;
+		width: 98%;
 	}
 	.filterBySpan {
 		font-size: 18px;
@@ -65,5 +63,18 @@
 	.filterFavButton {
 		width: 100%;
 		font-size: 16px;
+	}
+}
+
+@media (max-width: 425px) {
+	.filterByBlock {
+		gap: 8px;
+		width: 158px;
+		flex-direction: column;
+	}
+	.filterSelect option {
+		width: 100%;
+		font-size: 13px;
+		font-weight: 700;
 	}
 }

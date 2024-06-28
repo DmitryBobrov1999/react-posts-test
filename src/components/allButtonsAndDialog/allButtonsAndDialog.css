@@ -23,3 +23,11 @@
 .allFavoriteButton:hover {
 	transform: scale(1.05);
 }
+@media (max-width: 425px) {
+	.allDeleteButton {
+		width: 80px;
+	}
+	.allFavoriteButton {
+		width: 80px;
+	}
+}
