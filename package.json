@@ -2,6 +2,7 @@
 	"name": "react-posts-test",
 	"private": true,
 	"version": "0.0.0",
+	"homepage": "https://DmitryBobrov1999.github.io/react-posts-test",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
