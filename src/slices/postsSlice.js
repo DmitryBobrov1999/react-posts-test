@@ -27,10 +27,7 @@ export const postsSlice = createSlice({
 		setPage: (state, action) => {
 			state.page = action.payload;
 			localStorage.setItem('page', action.payload);
-		},
-		deleteAll: state => {
-			state.posts = [];
-		},
+		}
 	},
 	extraReducers: builder => {
 		builder
@@ -95,5 +92,5 @@ export const postsSlice = createSlice({
 	},
 });
 
-export const { setPostsPerPage, setPage, deleteAll } = postsSlice.actions;
+export const { setPostsPerPage, setPage } = postsSlice.actions;
 export default postsSlice.reducer;

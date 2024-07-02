@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { deleteAll } from '../../slices/postsSlice';
 import './allButtonsAndDialog.css';
 import { AllConfirmation } from './allConfirmation/AllConfirmation';
 
@@ -9,7 +7,6 @@ export const AllButtonsAndDialog = ({ filteredPostsByName, setIsFavorite }) => {
 		useState(false);
 	const [isAddAllConfirmationOpen, setIsAddAllConfirmationOpen] =
 		useState(false);
-	const dispatch = useDispatch();
 
 	const deleteAllPosts = () => {
 		setIsDeleteAllConfirmationOpen(true);
@@ -30,7 +27,12 @@ export const AllButtonsAndDialog = ({ filteredPostsByName, setIsFavorite }) => {
 	};
 
 	const onAllConfirm = () => {
-		dispatch(deleteAll());
+		filteredPostsByName.forEach(post => {
+			setIsFavorite(prevState => ({
+				...prevState,
+				[post.id]: (prevState[post.id] = false),
+			}));
+		});
 		setIsDeleteAllConfirmationOpen(false);
 	};
 
@@ -42,8 +44,9 @@ export const AllButtonsAndDialog = ({ filteredPostsByName, setIsFavorite }) => {
 		setIsAddAllConfirmationOpen(true);
 	};
 
-	const allText = isDeleteAllConfirmationOpen && 'Удалить все посты?' ||
-	isAddAllConfirmationOpen && 'Все в избранное?';
+	const allText =
+		(isDeleteAllConfirmationOpen && 'Удалить все посты?') ||
+		(isAddAllConfirmationOpen && 'Все в избранное?');
 
 	return (
 		<div className='allButtonsAndDialog'>
