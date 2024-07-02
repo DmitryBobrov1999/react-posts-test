@@ -2,7 +2,11 @@ import { useState } from 'react';
 import './allButtonsAndDialog.css';
 import { AllConfirmation } from './allConfirmation/AllConfirmation';
 
-export const AllButtonsAndDialog = ({ filteredPostsByName, setIsFavorite }) => {
+export const AllButtonsAndDialog = ({
+	filteredPostsByName,
+	setIsFavorite,
+	isOnChecked,
+}) => {
 	const [isDeleteAllConfirmationOpen, setIsDeleteAllConfirmationOpen] =
 		useState(false);
 	const [isAddAllConfirmationOpen, setIsAddAllConfirmationOpen] =
@@ -14,10 +18,12 @@ export const AllButtonsAndDialog = ({ filteredPostsByName, setIsFavorite }) => {
 
 	const addAllConfirm = () => {
 		filteredPostsByName.forEach(post => {
-			setIsFavorite(prevState => ({
-				...prevState,
-				[post.id]: (prevState[post.id] = true),
-			}));
+			if (isOnChecked[post.id]) {
+				setIsFavorite(prevState => ({
+					...prevState,
+					[post.id]: (prevState[post.id] = true),
+				}));
+			}
 		});
 		setIsAddAllConfirmationOpen(false);
 	};
@@ -28,10 +34,12 @@ export const AllButtonsAndDialog = ({ filteredPostsByName, setIsFavorite }) => {
 
 	const onAllConfirm = () => {
 		filteredPostsByName.forEach(post => {
-			setIsFavorite(prevState => ({
-				...prevState,
-				[post.id]: (prevState[post.id] = false),
-			}));
+			if (isOnChecked[post.id]) {
+				setIsFavorite(prevState => ({
+					...prevState,
+					[post.id]: (prevState[post.id] = false),
+				}));
+			}
 		});
 		setIsDeleteAllConfirmationOpen(false);
 	};
@@ -45,7 +53,7 @@ export const AllButtonsAndDialog = ({ filteredPostsByName, setIsFavorite }) => {
 	};
 
 	const allText =
-		(isDeleteAllConfirmationOpen && 'Удалить все посты?') ||
+		(isDeleteAllConfirmationOpen && 'Удалить все из избранного?') ||
 		(isAddAllConfirmationOpen && 'Все в избранное?');
 
 	return (
@@ -61,7 +69,7 @@ export const AllButtonsAndDialog = ({ filteredPostsByName, setIsFavorite }) => {
 				/>
 			)}
 			<button onClick={addAllFavorites} className='allFavoriteButton'>
-				All to favorites
+				Add all
 			</button>
 			{isAddAllConfirmationOpen && (
 				<AllConfirmation

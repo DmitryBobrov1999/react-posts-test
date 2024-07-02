@@ -66,7 +66,7 @@ export const BaseLayout = () => {
 			};
 		}
 	});
-
+console.log(isOnChecked)
 	const filteredPostsByTitle = postsWithUsers.filter(post =>
 		post.title?.toLowerCase().includes(searchValue?.toLowerCase())
 	);
@@ -183,6 +183,7 @@ export const BaseLayout = () => {
 
 	const onChecked = postId => {
 		setIsOnChecked(prevState => ({
+			...prevState,
 			[postId]: !prevState[postId],
 		}));
 	};
@@ -252,6 +253,7 @@ export const BaseLayout = () => {
 								<AllButtonsAndDialog
 									filteredPostsByName={filteredPostsByName}
 									setIsFavorite={setIsFavorite}
+									isOnChecked={isOnChecked}
 								/>
 							)}
 						</div>
