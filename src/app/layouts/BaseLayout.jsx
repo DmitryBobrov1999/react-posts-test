@@ -27,6 +27,7 @@ export const BaseLayout = () => {
 	const [isDeleteConfirmationOpen, setIsDeleteConfirmationOpen] = useState({});
 	const [isFavorite, setIsFavorite] = useState({});
 	const [isOnChecked, setIsOnChecked] = useState({});
+	const [isOnShowed, setIsOnShowed] = useState({});
 	const [showFavorite, setShowFavorite] = useState(false);
 	const [searchValue, setSearchValue] = useState('');
 	const [nameValue, setNameValue] = useState('');
@@ -66,7 +67,7 @@ export const BaseLayout = () => {
 			};
 		}
 	});
-console.log(isOnChecked)
+
 	const filteredPostsByTitle = postsWithUsers.filter(post =>
 		post.title?.toLowerCase().includes(searchValue?.toLowerCase())
 	);
@@ -186,6 +187,9 @@ console.log(isOnChecked)
 			...prevState,
 			[postId]: !prevState[postId],
 		}));
+		setIsOnShowed(prevState => ({
+			[postId]: !prevState[postId],
+		}));
 	};
 
 	const handleShowFavorite = () => {
@@ -249,7 +253,7 @@ console.log(isOnChecked)
 								}}
 							/>
 
-							{isOnChecked[post.id] && (
+							{isOnShowed[post.id] && (
 								<AllButtonsAndDialog
 									filteredPostsByName={filteredPostsByName}
 									setIsFavorite={setIsFavorite}
