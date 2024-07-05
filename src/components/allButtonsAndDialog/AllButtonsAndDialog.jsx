@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { deletePostData } from '../../api/deletePostApi';
 import './allButtonsAndDialog.css';
 import { AllConfirmation } from './allConfirmation/AllConfirmation';
 
@@ -11,6 +13,7 @@ export const AllButtonsAndDialog = ({
 		useState(false);
 	const [isAddAllConfirmationOpen, setIsAddAllConfirmationOpen] =
 		useState(false);
+	const dispatch = useDispatch();
 
 	const deleteAllPosts = () => {
 		setIsDeleteAllConfirmationOpen(true);
@@ -35,10 +38,7 @@ export const AllButtonsAndDialog = ({
 	const onAllConfirm = () => {
 		filteredPostsByName.forEach(post => {
 			if (isOnChecked[post.id]) {
-				setIsFavorite(prevState => ({
-					...prevState,
-					[post.id]: (prevState[post.id] = false),
-				}));
+				dispatch(deletePostData({ postId: post.id }));
 			}
 		});
 		setIsDeleteAllConfirmationOpen(false);
@@ -53,8 +53,8 @@ export const AllButtonsAndDialog = ({
 	};
 
 	const allText =
-		(isDeleteAllConfirmationOpen && 'Удалить все из избранного?') ||
-		(isAddAllConfirmationOpen && 'Все в избранное?');
+		(isDeleteAllConfirmationOpen && 'delete selected posts?') ||
+		(isAddAllConfirmationOpen && 'add selected posts to favorites?');
 
 	return (
 		<div className='allButtonsAndDialog'>

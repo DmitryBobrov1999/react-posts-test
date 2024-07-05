@@ -27,7 +27,6 @@ export const BaseLayout = () => {
 	const [isDeleteConfirmationOpen, setIsDeleteConfirmationOpen] = useState({});
 	const [isFavorite, setIsFavorite] = useState({});
 	const [isOnChecked, setIsOnChecked] = useState({});
-	const [isOnShowed, setIsOnShowed] = useState({});
 	const [showFavorite, setShowFavorite] = useState(false);
 	const [searchValue, setSearchValue] = useState('');
 	const [nameValue, setNameValue] = useState('');
@@ -187,9 +186,6 @@ export const BaseLayout = () => {
 			...prevState,
 			[postId]: !prevState[postId],
 		}));
-		setIsOnShowed(prevState => ({
-			[postId]: !prevState[postId],
-		}));
 	};
 
 	const handleShowFavorite = () => {
@@ -253,7 +249,7 @@ export const BaseLayout = () => {
 								}}
 							/>
 
-							{isOnShowed[post.id] && (
+							{isOnChecked[post.id] && (
 								<AllButtonsAndDialog
 									filteredPostsByName={filteredPostsByName}
 									setIsFavorite={setIsFavorite}
